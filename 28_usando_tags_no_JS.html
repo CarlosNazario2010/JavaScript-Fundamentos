@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    // tags de input e botao criados no mundo html
+
+    function verifica() {
+
+        // input.value pega o valor do input
+
+        if(input.value == segredo) {
+            alert('Você acertou!!!');
+        }
+        else {
+            alert('Você errou!!!');
+        }
+
+        // input.value retorna a '' (string vazia), para que se tente novamente
+
+        input.value = '';
+
+        // input.focus() retorna o cursor para a caixa de dialogo do input
+
+        input.focus();
+    }
+    
+    var segredo = Math.round(Math.random() * 10);
+
+    // metodo querySelector pega os valores das tags HTML
+
+    var input = document.querySelector('input');
+    input.focus();
+
+    var button = document.querySelector('button');
+
+    // metodo onclick guarda a funcao criada para a comparacao dos valores
+    // OBS - A funcao nao recebe (), oara que a mesma fique armazenada no onclick
+    // OBS - Seria como se o clique do botao chamasse os () da funcao
+
+    button.onclick = verifica;
+    
+</script>

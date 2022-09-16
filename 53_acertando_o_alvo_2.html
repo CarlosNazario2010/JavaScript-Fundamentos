@@ -1,0 +1,60 @@
+<canvas width="600" height="600"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 600);
+
+    var raio = 10;
+
+    var x = 250;
+    var y = 180;
+
+    // variaveis foram declaradas sem valor e fora das funcoes
+    // para que qualquer funcao possa acessá-la em escopo global
+    var xRandom;
+    var yRandom;
+
+    function limpaTela() {
+        pincel.clearRect(0, 0, 600, 600);
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+    
+    function desenhaAlvo(x, y) {
+        desenhaCirculo(x, y, raio + 20, 'red'); 
+        desenhaCirculo(x, y, raio + 10, 'white');
+        desenhaCirculo(x, y, raio, 'red'); 
+    
+    }
+    
+    function randomizaAlvo() {
+
+        // Math,floor arredonda para baixo. o .round aredonda para cima
+        xRandom = Math.floor(Math.random() * 600);
+        yRandom = Math.floor(Math.random() * 600);
+        limpaTela();
+        desenhaAlvo(xRandom, yRandom); 
+    }
+
+    setInterval(randomizaAlvo, 2000);
+
+    tela.onclick = function(evento) {
+        x = evento.pageX - tela.offsetLeft;
+        y = evento.pageY - tela.offsetTop;
+        if((x > xRandom - raio) &&
+            (x < xRandom + raio) &&
+            (y > yRandom - raio) &&
+            (y < yRandom + raio)) {
+                alert('Acertou o alvo!!!')
+        }
+    }
+
+</script>

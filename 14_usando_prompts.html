@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    function calculaIMC(peso, altura) {
+        var imc = peso / (altura * altura);
+        return imc;
+    }
+
+    // funcao prompt é equivalente a funcao input do Python
+
+    var nome = prompt('Digite seu nome: ')
+    var altura = prompt(nome + ', Informe sua altura: ');
+    var peso = prompt(nome + ', Informe seu peso: ');
+    var imc = calculaIMC(peso, altura);
+
+    mostra(nome + ', o seu IMC é de: ' + imc)
+
+</script>

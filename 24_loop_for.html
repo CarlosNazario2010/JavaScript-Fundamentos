@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    var numero = parseInt(prompt(
+        'Digite um número para ver sua tabuada:'));
+    var multiplicador = 1;
+
+    // for(variavel; condicao de parada; incremento) {}
+
+    for(multiplicador; multiplicador <= 10; multiplicador++) {
+        var resultado = multiplicador * numero;
+        mostra(numero + '  X  ' + multiplicador + ' = ' + resultado);
+    }
+
+    mostra('FIM!');
+
+</script>

@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    var quantidade = parseInt(prompt(
+        'Digite a quantidade de pessoas para a qual a média de idades será calculada:'))
+    var contador = 0;
+    var somaIdades = 0;
+
+    while(quantidade > contador) {
+        var idade = parseInt(prompt(
+            'Digite sua idade:'
+        ));
+        somaIdades += idade; 
+        contador++;
+    }
+    
+    var media = somaIdades / quantidade;
+
+    mostra('A média das idades nesse cálculo é de: ' + media);
+
+</script>

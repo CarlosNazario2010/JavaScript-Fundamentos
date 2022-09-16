@@ -1,0 +1,74 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Descubra os números sorteados (1 à 10)</button>
+
+<script>
+
+    function verifica() {
+
+        var achou = false;
+
+        // metodo length é similar a funcao len() do Python
+
+        for(var i = 0; i < segredos.length; i++) {
+            if(input.value == segredos[i]) {
+                alert('Você acertou!!!');
+                achou = true;
+            }
+        }
+        if(achou == false) {
+            alert('Você errou!!!');
+        } 
+        input.value = '';
+        input.focus();     
+    }
+
+    function sorteiaNumero() {
+        return Math.round(Math.random() * 10);
+    }
+    
+    function criaLista(quantidade) {
+        var segredos = [];
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+            var numeroAleatorio = sorteiaNumero();
+            var achou = false;
+
+            if (numeroAleatorio != 0) {
+                
+                for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+    // se o numero sorteado esta na lista, da um break
+                   if(segredos[posicao] == numeroAleatorio){
+                        achou = true;
+                        break;
+                   }
+                }
+                if (achou == false) {
+
+    // se nao esta na lista, acrescenta p numero e incrementa o contador
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+        }
+        return segredos;
+    }   
+
+    var quantidade = parseInt(prompt('Digite a quantidade de números sorteados:'));
+
+    var segredos = criaLista(quantidade);
+
+    // para visualizar no console os numeros sorteados
+    console.log(segredos);
+
+    var input = document.querySelector('input');
+    input.focus();
+
+    var button = document.querySelector('button');
+    button.onclick = verifica;
+    
+</script>

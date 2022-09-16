@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+Imprima em ordem decrescente <br>
+todos os números entre 20 e 0, incluindo os limites!
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    var numero = 20;
+    pulaLinha(numero);
+
+    while(numero >= 0) {
+        mostra(numero);
+        numero -= 1;
+    }
+
+    mostra('FIM!');
+
+</script>

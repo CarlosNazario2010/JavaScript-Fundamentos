@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    // funcao parseInt é similar a funcao int do Python
+
+    var vitorias = parseInt(prompt('Digite o número de vitórias'));
+    var empates = parseInt(prompt('Digite o número de empates: '));
+    var pontos = vitorias * 3 + empates;
+    mostra('Os pontos do seu time é: ' + pontos);
+    
+</script>

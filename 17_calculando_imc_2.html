@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1>OS NIVEIS RECOMENDADOS DE IMC FICAM ENTRE 17.5 E 35.</h1>
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    function calculaIMC(peso, altura) {
+        var imc = peso / (altura * altura);
+        return imc
+    }
+
+    // funcao parseFloat é similar a funcao float do Python
+
+    var peso = parseFloat(prompt('Digite seu peso: '));
+    var altura = parseFloat(prompt('Digite sua altura: '));
+    var imc = calculaIMC(peso, altura);
+    var imcSubPeso = 17.5;
+    var imcSobrePeso = 35;
+
+    mostra('Seu IMC é de: ' + imc);
+
+    if(imc < imcSubPeso) {
+        mostra('Seu IMC está abaixo dos parâmetros recomendados.');
+    }
+    else if(imc > imcSobrePeso) {
+        mostra('Seu IMC está acima dos parâmetros recomendados.');
+    }
+    else {
+        mostra('Sei IMC está dentro dos parâmetros recomendados.');
+    }
+
+</script>

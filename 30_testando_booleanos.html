@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do Yan</h1>
+
+<script>
+
+ /* 1 - cria o loop while para iterar ate a quantidade digitada
+    2 - cria o loop for que varre a lista de ingredientes
+    3 - se o ingrediente digitado esta na lista de ingredientes
+    4 - variavel existe recebe true e sai do loop for
+    5 - e como existe vale true, o if onde existe recebe false
+    6 - nunca sera executado
+    7 - se a variavel existe ainda permanecer falsa
+    8 - acrescenta o ingrediente na lista de ingredientes
+    9 - e ai sim o contador pode ser incrementado
+    10 - dessa forma nao sera acrescentado um ingrediete repetido */
+
+    var ingredientes = [];
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+    var contador = 1;
+
+    while( contador <= quantidade) {
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        var existe = false;
+
+        for( var posicao = 0; posicao < ingredientes.length; posicao++) {
+            if( ingredientes[posicao] == ingrediente) {
+                existe = true;
+                break;
+            }
+        }
+        if( existe == false) {
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+    console.log(ingredientes);
+    document.write(ingredientes);
+
+</script>

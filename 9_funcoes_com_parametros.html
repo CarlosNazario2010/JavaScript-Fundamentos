@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+    // function > nomeDaFuncao > (parametros) > {instruçoes da funcao}
+
+    function pulaLinha() {
+        document.write('<br><br>');
+    }
+
+    function mostra(texto) {             // texto = 'Flavio tem ' + (ano - 1977) + ' anos' 
+        document.write(texto);
+        pulaLinha();                     // funcao mostra() chama a funcao pulaLinha()
+    }
+    
+    var ano = 2022;
+
+    mostra('Flavio tem ' + (ano - 1977) + ' anos');
+
+    mostra('Joaquim tem ' + (ano - 1986) + ' anos');
+
+    mostra('Barney tem ' + (ano - 1996) + ' anos');
+
+</script>

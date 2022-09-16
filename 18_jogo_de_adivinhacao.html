@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    // Math.random sorteia um número de ponto flutuante de 0 a 1
+    // o número é então multiplicado po 10 para este ser de 1 a 10
+    // e o Math.round retira as casas decimais, restando um número inteiro de 1 a 10
+
+    var numeroPensado = Math.round(Math.random() * 10);
+
+    // console.log permite ver no console do navegador o resultado
+    // do sorteio do número pensado. Dessa forma se pode testar o
+    // programa na condicao de acerto do palpite
+
+    console.log(numeroPensado);
+
+    var palpite = parseInt(prompt('Adivinhe o número que estou pensando (0 a 10)'));    
+
+    if(palpite == numeroPensado) {
+        mostra('Você digitou o número: ' + palpite);
+        mostra('Parabéns, você acertou!!!');
+    }
+    else {
+        mostra('Você digitou o número: ' + palpite);
+        mostra('Você errou, o número que eu pensei foi ' + numeroPensado); 
+    }
+
+</script>

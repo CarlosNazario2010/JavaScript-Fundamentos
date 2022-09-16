@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write('<hr>'); 
+    }
+
+    function mostra(frase) {
+        document.write('<big>' + frase + '</big>');
+        pulaLinha();
+    }
+
+    for(var i = 0; i < 10; i++) {
+        mostra( "O resultado é " + (2 * i) );
+    }
+    mostra('FIM!');
+
+    pulaLinha()
+    pulaLinha()
+
+    var i = 0;
+    while(i < 10) {
+        mostra( "O resultado é " + (2 * i) );
+        i++;    
+    }
+    mostra('FIM!');
+
+</script>
